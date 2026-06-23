@@ -93,8 +93,7 @@ def simplify_medical_specialty(df: pd.DataFrame) -> pd.DataFrame:
     if "medical_specialty" not in df.columns:
         return df
 
-    df["medical_specialty"] = df["medical_specialty"].fillna("Missing")
-    df["medical_specialty"] = df["medical_specialty"].map(SPECIALTY_MAP).fillna(df["medical_specialty"])
+    df["medical_specialty"] = df["medical_specialty"].map(SPECIALTY_MAP).fillna("Other")
 
     return df
 
